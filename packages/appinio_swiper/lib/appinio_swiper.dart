@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class AppinioSwiper extends StatefulWidget {
   /// list of widgets for the swiper
@@ -77,7 +78,7 @@ class _AppinioSwiperState extends State<AppinioSwiper>
   double _total = 0;
   double _angle = 0;
   double _maxAngle = 0;
-  double _scale = 0.9;
+  late double _scale = widget.scale;
   double _difference = 40;
 
   int _swipeTyp = 0; // 1 = swipe, 2 = unswipe, 3 = goBack
@@ -243,7 +244,7 @@ class _AppinioSwiperState extends State<AppinioSwiper>
           _top = 0;
           _total = 0;
           _angle = 0;
-          _scale = 0.9;
+          _scale = widget.scale;
           _difference = 40;
           _swipeTyp = 0;
         });
@@ -366,7 +367,7 @@ class _AppinioSwiperState extends State<AppinioSwiper>
   void _calculateScale() {
     if (_scale <= 1.0 && _scale >= 0.9) {
       _scale =
-          (_total > 0) ? 0.9 + (_total / 5000) : 0.9 + -1 * (_total / 5000);
+          (_total > 0) ?  widget.scale + (_total / 5000) :  widget.scale + -1 * (_total / 5000);
     }
   }
 
@@ -480,7 +481,7 @@ class _AppinioSwiperState extends State<AppinioSwiper>
       ).animate(_animationController);
       _scaleAnimation = Tween<double>(
         begin: _scale,
-        end: 0.9,
+        end: widget.scale,
       ).animate(_animationController);
       _differenceAnimation = Tween<double>(
         begin: _difference,
