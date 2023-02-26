@@ -24,7 +24,10 @@ class AppinioSwiper extends StatefulWidget {
 
   /// set to true if swiping should be disabled, exception: triggered from the outside
   final bool isDisabled;
-
+  
+  /// scale of the card that is behind the front card
+  final double scale;
+  
   /// set to false if unswipe should be disabled
   final bool allowUnswipe;
 
@@ -43,9 +46,6 @@ class AppinioSwiper extends StatefulWidget {
   /// function that gets called with the boolean true when the last card gets unswiped and with the boolean false when there is no card to unswipe
   final Function unswipe;
 
-  /// scale of the card that is behind the front card
-  final double scale;
-  
   
   /// direction in which the card gets swiped when triggered by controller, default set to right
   final AppinioSwiperDirection direction;
