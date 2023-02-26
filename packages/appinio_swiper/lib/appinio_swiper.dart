@@ -43,6 +43,10 @@ class AppinioSwiper extends StatefulWidget {
   /// function that gets called with the boolean true when the last card gets unswiped and with the boolean false when there is no card to unswipe
   final Function unswipe;
 
+  /// scale of the card that is behind the front card
+  final double scale;
+  
+  
   /// direction in which the card gets swiped when triggered by controller, default set to right
   final AppinioSwiperDirection direction;
 
@@ -57,6 +61,7 @@ class AppinioSwiper extends StatefulWidget {
     this.isDisabled = false,
     this.allowUnswipe = true,
     this.unlimitedUnswipe = false,
+    this.scale = 0.9,
     this.onTapDisabled = emptyFunction,
     this.onSwipe = emptyFunctionIndex,
     this.onEnd = emptyFunction,
@@ -365,9 +370,9 @@ class _AppinioSwiperState extends State<AppinioSwiper>
   }
 
   void _calculateScale() {
-    if (_scale <= 1.0 && _scale >= 0.9) {
+    if (_scale <= 1.0 && _scale >= widget.scale) {
       _scale =
-          (_total > 0) ?  widget.scale + (_total / 7000) :  widget.scale + -1 * (_total / 7000);
+          (_total > 0) ?  widget.scale + (_total / 9000) :  widget.scale + -1 * (_total / 9000);
     }
   }
 
