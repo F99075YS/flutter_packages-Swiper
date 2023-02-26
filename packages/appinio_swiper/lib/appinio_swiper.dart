@@ -367,7 +367,7 @@ class _AppinioSwiperState extends State<AppinioSwiper>
   void _calculateScale() {
     if (_scale <= 1.0 && _scale >= 0.9) {
       _scale =
-          (_total > 0) ?  widget.scale + (_total / 5000) :  widget.scale + -1 * (_total / 5000);
+          (_total > 0) ?  widget.scale + (_total / 7000) :  widget.scale + -1 * (_total / 7000);
     }
   }
 
