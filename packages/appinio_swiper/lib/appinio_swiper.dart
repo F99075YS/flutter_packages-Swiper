@@ -25,9 +25,6 @@ class AppinioSwiper extends StatefulWidget {
   /// set to true if swiping should be disabled, exception: triggered from the outside
   final bool isDisabled;
   
-  /// scale of the card that is behind the front card
-  final double scale;
-  
   /// set to false if unswipe should be disabled
   final bool allowUnswipe;
 
@@ -61,7 +58,6 @@ class AppinioSwiper extends StatefulWidget {
     this.isDisabled = false,
     this.allowUnswipe = true,
     this.unlimitedUnswipe = false,
-    this.scale = 0.9,
     this.onTapDisabled = emptyFunction,
     this.onSwipe = emptyFunctionIndex,
     this.onEnd = emptyFunction,
